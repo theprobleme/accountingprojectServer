@@ -20,3 +20,22 @@ exports.getReferents = async (request, response) => {
     }
 }
 
+exports.modifiedReferent = async (request, response) => {
+    var isadmin = request.isadmin
+    var shortname = request.body.shortname
+    var iduser = request.body.iduser
+    console.log(shortname)
+    console.log(iduser)
+    if (isadmin) {
+        db.query('INSERT INTO referentof SET ?', {iduser: iduser, shortname: shortname}, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                response.send({
+                    message: 'Référent modifié !',
+                    type: 'primary',
+                })
+            }
+        })
+    }
+}

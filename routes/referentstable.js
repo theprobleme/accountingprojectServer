@@ -4,9 +4,6 @@ const referentstableController = require('../controllers/referentstableControlle
 const router = express.Router();
 
 router.get('/referentstable', referentstableController.getReferents)
-
-// router.post('/clubstable', referenttableController.createClub)
-// router.delete('/clubstable', referenttableController.deleteClub)
-// router.put('/clubstable', referenttableController.modifiedClub)
+router.post('/referentstable', referentstableController.modifiedReferent)
 
 module.exports = router;
