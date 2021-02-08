@@ -46,6 +46,7 @@ exports.login = async (request, response) => {
                 response.cookie('jwt', token, cookieOptions)        // Génération du cookie
                 response.status(200)                                // Status de la réponse
                 response.send(results[0])                           // résultat
+                console.log(results[0])
 
             } else {
                 response.status(401)

@@ -13,5 +13,6 @@ exports.getClubs = async (request, response) => {
     db.query('SELECT c.clubname, c.shortname, c.img, c.idclub, u.lastname, u.firstname , u.email, r.iduser AS ref FROM accessto a INNER JOIN clubs c JOIN referentof r RIGHT JOIN users u ON u.iduser = r.iduser WHERE a.iduser = ? AND a.shortname = c.shortname AND r.shortname = c.shortname GROUP BY c.shortname ORDER BY c.clubname', [id], async (error, results) => {
         const array = Object.values(JSON.parse(JSON.stringify(results)))
         response.send(array)
+        console.log(array)
     })
 }
