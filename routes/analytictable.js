@@ -5,7 +5,7 @@ const analytictable = require('../controllers/analytictableController')
 const router = express.Router();
 
 router.get('/analytictable', analytictable.getAnalytic)
-// router.post('/accountchart', analytictable.createAnalytic)
-// router.delete('/accountchart', analytictable.deleteAnalytic)
+router.post('/analytictable', analytictable.createAnalytic)
+router.delete('/analytictable', analytictable.deleteAnalytic)
 
 module.exports = router;
