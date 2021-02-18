@@ -82,7 +82,7 @@ module.exports = function (app) {
 
     app.use('/api/user', require('../routes/referentstable'))
 
-
+    app.use('/api/user', require('../routes/analytictable'))
 }
 
 
